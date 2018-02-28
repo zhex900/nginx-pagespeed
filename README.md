@@ -1,6 +1,6 @@
 # Docker Nginx + PageSpeed + GEO IP
 
-This is fork from https://github.com/markhilton/docker-nginx-pagespeed
+This is forked from https://github.com/markhilton/docker-nginx-pagespeed
  
 This docker image based on Debian Stretch linux distribution. 
 Project goal is an easy to build docker image of latest Nginx web server with Google PageSpeed and Geo IP modules.
