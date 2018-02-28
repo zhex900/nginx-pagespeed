@@ -21,19 +21,20 @@ if [ "$NGINX_PAGESPEED_IMG" == "on" ]; then
 	echo "ON"
 
 	printf "# image related optimization\n" 							 >  /etc/nginx/conf.d/pagespeed-image.conf
-	printf "pagespeed EnableFilters resize_images;\n" 					 >> /etc/nginx/conf.d/pagespeed-image.conf
+#	printf "pagespeed EnableFilters resize_images;\n" 					 >> /etc/nginx/conf.d/pagespeed-image.conf
 	printf "pagespeed EnableFilters rewrite_images;\n" 					 >> /etc/nginx/conf.d/pagespeed-image.conf
 	printf "pagespeed EnableFilters lazyload_images;\n" 				 >> /etc/nginx/conf.d/pagespeed-image.conf
 	printf "pagespeed EnableFilters jpeg_subsampling;\n" 				 >> /etc/nginx/conf.d/pagespeed-image.conf
 	printf "pagespeed EnableFilters responsive_images;\n" 				 >> /etc/nginx/conf.d/pagespeed-image.conf
 	printf "pagespeed EnableFilters convert_gif_to_png;\n" 				 >> /etc/nginx/conf.d/pagespeed-image.conf
-	printf "pagespeed EnableFilters strip_image_meta_data;\n" 			 >> /etc/nginx/conf.d/pagespeed-image.conf
+	printf "pagespeed EnableFilters convert_png_to_jpeg;\n"                          >> /etc/nginx/conf.d/pagespeed-image.conf
+        printf "pagespeed EnableFilters strip_image_meta_data;\n" 			 >> /etc/nginx/conf.d/pagespeed-image.conf
 	printf "pagespeed EnableFilters strip_image_color_profile;\n" 		 >> /etc/nginx/conf.d/pagespeed-image.conf
 	printf "pagespeed EnableFilters convert_jpeg_to_progressive;\n" 	 >> /etc/nginx/conf.d/pagespeed-image.conf
 
 	printf "pagespeed EnableFilters dedup_inlined_images;\n" 			 >> /etc/nginx/conf.d/pagespeed-image.conf
 	printf "pagespeed EnableFilters inline_preview_images;\n" 			 >> /etc/nginx/conf.d/pagespeed-image.conf
-	printf "pagespeed EnableFilters resize_mobile_images;\n" 			 >> /etc/nginx/conf.d/pagespeed-image.conf
+#	printf "pagespeed EnableFilters resize_mobile_images;\n" 			 >> /etc/nginx/conf.d/pagespeed-image.conf
 	printf "pagespeed EnableFilters inline_images;\n" 					 >> /etc/nginx/conf.d/pagespeed-image.conf
 	printf "pagespeed EnableFilters recompress_jpeg;\n" 				 >> /etc/nginx/conf.d/pagespeed-image.conf
 	printf "pagespeed EnableFilters recompress_png;\n" 					 >> /etc/nginx/conf.d/pagespeed-image.conf
@@ -41,7 +42,7 @@ if [ "$NGINX_PAGESPEED_IMG" == "on" ]; then
 	printf "pagespeed EnableFilters resize_rendered_image_dimensions;\n" >> /etc/nginx/conf.d/pagespeed-image.conf
 	printf "pagespeed EnableFilters convert_jpeg_to_webp;\n" 			 >> /etc/nginx/conf.d/pagespeed-image.conf
 	printf "pagespeed EnableFilters convert_to_webp_lossless;\n" 		 >> /etc/nginx/conf.d/pagespeed-image.conf
-	printf "pagespeed EnableFilters insert_image_dimensions;\n" 		 >> /etc/nginx/conf.d/pagespeed-image.conf
+#	printf "pagespeed EnableFilters insert_image_dimensions;\n" 		 >> /etc/nginx/conf.d/pagespeed-image.conf
 	printf "pagespeed EnableFilters sprite_images;\n" 					 >> /etc/nginx/conf.d/pagespeed-image.conf
 else 
 	echo "OFF";
