@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh 'npm --version'
                 sh 'ls'
-                docker images
+                sh 'docker images'
             }
         }
     }
