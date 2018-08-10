@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             steps {
                     sh "echo hi"
-                    sh "docker run --rm -v '${env.WORKSPACE}':'/project':ro  busybox ls /project"
+                    sh "docker run --rm -v '${env.WORKSPACE}':'/project'  busybox cat /project/Dockerfile"
                     sh "docker-compose run nginx"
             }
         }
