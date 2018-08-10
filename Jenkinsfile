@@ -9,9 +9,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'npm --version'
-                sh 'ls /usr/src/app'
-                sh 'docker images'
-                sh 'pwd'
+                sh 'ls'
                 sh 'docker run --rm -v $(pwd):/aa busybox ls /aa' 
             }
         }
