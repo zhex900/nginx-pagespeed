@@ -4,9 +4,8 @@ pipeline {
         stage('build') {
             echo "Docker Run ..."
             steps {
-                docker.withTool('docker') {
                     sh "docker-compose run nginx"
-                }
+
             }
         }
     }
