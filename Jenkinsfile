@@ -2,10 +2,11 @@ pipeline {
     agent { docker { image 'node:6.3' } }
     stages {
         stage('build') {
+            echo "Docker Run ..."
             steps {
-                sh 'npm --version'
-                sh 'ls'
-                sh 'docker images'
+                docker.withTool('docker') {
+                    sh "docker-compose run nginx"
+                }
             }
         }
     }
