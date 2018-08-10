@@ -12,7 +12,7 @@ pipeline {
                 sh 'ls /usr/src/app'
                 sh 'docker images'
                 sh 'pwd'
-                sh 'docker run --rm -v /:/aa busybox ls /aa' 
+                sh 'docker run --rm -v $(pwd):/aa busybox ls /aa' 
             }
         }
     }
