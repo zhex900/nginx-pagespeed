@@ -11,6 +11,8 @@ pipeline {
                 sh 'npm --version'
                 sh 'ls /usr/src/app'
                 sh 'docker images'
+                sh 'pwd'
+                sh 'docker run --rm -v /:/aa busybox ls /aa' 
             }
         }
     }
