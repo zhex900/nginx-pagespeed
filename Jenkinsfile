@@ -1,7 +1,7 @@
 pipeline {
     agent { docker { 
                 image 'node:6.3' 
-                args '-v ${PWD}:/usr/src/app -w /usr/src/app'
+                args '-v  /var/jenkins_home/workspace/learn:/usr/src/app -w /usr/src/app'
                 reuseNode true
             } 
      }
@@ -9,8 +9,8 @@ pipeline {
         stage('build') {
             steps {
                 sh 'npm --version'
-                sh 'ls'
-                sh 'docker run --rm -v $(pwd):/aa busybox ls /aa' 
+                sh 'ls /usr/src/app'
+                sh 'docker run --rm -v /usr/src/app:/aa busybox ls /aa' 
             }
         }
     }
