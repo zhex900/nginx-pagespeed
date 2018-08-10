@@ -5,7 +5,6 @@ pipeline {
             echo "Docker Run ..."
             steps {
                     sh "docker-compose run nginx"
-
             }
         }
     }
