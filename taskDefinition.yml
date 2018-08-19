@@ -1,0 +1,24 @@
+platform: linux
+
+image_resource:
+        type: docker-image
+        source: {
+        repository: quay.io/cosee-concourse/dind,
+        tag: "latest" }
+
+run:
+        path: sh
+        args:
+        - -exc
+        - |
+          source /docker-lib.sh               # required
+          start_docker                        # required
+          # for own Dockerfiles:
+          cd source
+          #docker build -t testimage .
+          #docker run -it --rm testimage parameter
+          # other example: use image from Docker Hub:
+          docker run -it --rm ubuntu echo "Hello Jake World"
+
+inputs:
+    - name: source
